@@ -1,11 +1,10 @@
-import React, { useContext } from "react"
-import cart from "./cart.png"
-import { Link, useHistory } from "react-router-dom"
-import { FaHeart } from "react-icons/fa"
-import styled from "styled-components"
-import { Context } from "../../context/context"
-import PrimaryButton from "../buttons/PrimaryButton"
-import DropdownList from "../DropdownList"
+import React, { useContext } from 'react'
+import cart from './cart.png'
+import { Link, useHistory } from 'react-router-dom'
+import styled from 'styled-components'
+import { Context } from '../../context/context'
+import PrimaryButton from '../buttons/PrimaryButton'
+import DropdownList from '../DropdownList'
 
 const Section = styled.section`
   position: fixed;
@@ -36,22 +35,6 @@ const Menu = styled.div`
   align-items: center;
 `
 
-const StyledLink = styled(Link)`
-  color: #fff;
-  text-decoration: none;
-  font-size: 22px;
-  transition: all 0.5s;
-  &:hover {
-    color: var(--primary-color);
-    transform: scale(1.2);
-  }
-`
-
-const HeartIcon = styled(FaHeart)`
-  margin-left: 10px;
-  margin-bottom: 5px;
-`
-
 const CartLink = styled(Link)`
   width: 10%;
 `
@@ -66,13 +49,8 @@ const Header = () => {
 
   return (
     <Section>
-      <Title to="/">Vodafone Art Academy</Title>
+      <Title to="/">Your Design</Title>
       <Menu>
-        <StyledLink to="/mycourses">My courses</StyledLink>
-        <StyledLink to="/wishlist">
-          Wishlist
-          <HeartIcon />
-        </StyledLink>
         <CartLink to="/cart">
           <CartIcon src={cart} alt="cart" />
         </CartLink>
@@ -81,7 +59,7 @@ const Header = () => {
         ) : (
           <PrimaryButton
             text="Sign in"
-            clickEvent={() => history.push("/login")}
+            clickEvent={() => history.push('/login')}
             darkbg
           />
         )}

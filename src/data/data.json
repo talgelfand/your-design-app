@@ -6,7 +6,7 @@
       "title": "Impressionism",
       "price": "16 euros",
       "priceNum": 16,
-      "duration": "4 hours"
+      "size": "4 hours"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "title": "Andy Warhol's art",
       "price": "12 euros",
       "priceNum": 12,
-      "duration": "3.5 hours"
+      "size": "3.5 hours"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "title": "Introduction to modern art",
       "price": "12 euros",
       "priceNum": 12,
-      "duration": "3 hours"
+      "size": "3 hours"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "title": "Jean-Michel Basquiat",
       "price": "12 euros",
       "priceNum": 12,
-      "duration": "3.5 hours"
+      "size": "3.5 hours"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "title": "Introduction to ancient art",
       "price": "20 euros",
       "priceNum": 20,
-      "duration": "5.5 hours"
+      "size": "5.5 hours"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "title": "Marc Chagall",
       "price": "12 euros",
       "priceNum": 12,
-      "duration": "3.5 hours"
+      "size": "3.5 hours"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "title": "How to teach children about art",
       "price": "16 euros",
       "priceNum": 16,
-      "duration": "4.5 hours"
+      "size": "4.5 hours"
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "title": "The life and art of Frida Kahlo",
       "price": "12 euros",
       "priceNum": 12,
-      "duration": "3.5 hours"
+      "size": "3.5 hours"
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "title": "History of street art",
       "price": "15 euros",
       "priceNum": 15,
-      "duration": "4.5 hours"
+      "size": "4.5 hours"
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "title": "Art and its impact on society",
       "price": "15 euros",
       "priceNum": 15,
-      "duration": "4.5 hours"
+      "size": "4.5 hours"
     },
     {
       "id": 11,
@@ -86,7 +86,7 @@
       "title": "The meaning of color in Mark Rothko's art",
       "price": "12 euros",
       "priceNum": 12,
-      "duration": "3.5 hours"
+      "size": "3.5 hours"
     },
     {
       "id": 12,
@@ -94,7 +94,7 @@
       "title": "Art and mental health",
       "price": "18 euros",
       "priceNum": 18,
-      "duration": "5 hours"
+      "size": "5 hours"
     }
   ]
 }

@@ -1,13 +1,14 @@
-import React, { useContext, useEffect, useState } from "react"
-import { Context } from "../../context/context"
-import styled from "styled-components"
-import { Button } from "reactstrap"
-import CartItem from "../../components/CartItem"
-import { remove } from "../../utils/utils"
-import Title from "../../components/Title"
-import PrimaryButton from "../../components/buttons/PrimaryButton"
-import { Link } from "react-router-dom"
-import Loading from "../../components/Loading"
+import React, { useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
+import { Context } from '../../context/context'
+import styled from 'styled-components'
+import { Button } from 'reactstrap'
+import CartItem from '../../components/CartItem'
+import { remove } from '../../utils/utils'
+import Title from '../../components/Title'
+import PrimaryButton from '../../components/buttons/PrimaryButton'
+import { Link } from 'react-router-dom'
+import Loading from '../../components/Loading'
 
 const Section = styled.section`
   margin-top: 200px;
@@ -54,18 +55,26 @@ const Cart = () => {
   const [loading, setLoading] = useState(false)
   let totalPrice = 0
   const amountOfCourses = cartItems && cartItems.length
+  const history = useHistory()
 
   const getCourses = () => {
     setLoading(true)
     user.get().then((doc) => {
-      setCartItems(doc.data()["cartItems"])
+      setCartItems(doc.data()['cartItems'])
       setLoading(false)
+    })
+  }
+
+  const getUserData = () => {
+    setLoading(true)
+    user.get().then((doc) => {
+      setCartItems(doc.data()['cartItems'])
     })
   }
 
   useEffect(() => {
     getCourses()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    getUserData()
   }, [])
 
   const clearAllCourses = () => {
@@ -83,7 +92,7 @@ const Cart = () => {
 
   const courses = cartItems.map((item) => {
     const removeItem = (id) => {
-      const newItems = remove(user, cartItems, "cartItems", id, item)
+      const newItems = remove(user, cartItems, id, item)
       setCartItems(newItems)
     }
 
@@ -96,6 +105,11 @@ const Cart = () => {
 
   if (courses.length === 0) {
     return <Title text="No courses added to cart" />
+  }
+
+  const handleSubmit = () => {
+    user.update({ cartItems: [] })
+    history.push('/success')
   }
 
   return (
@@ -111,10 +125,9 @@ const Cart = () => {
             <TotalPrice>{`Total: ${countTotalPrice()} euros`}</TotalPrice>
           </div>
           <PrimaryButton
-            text={<StyledLink to="/checkout">Go to checkout</StyledLink>}
-          >
-            {/* <Link to="/checkout" /> */}
-          </PrimaryButton>
+            clickEvent={handleSubmit}
+            text={<StyledLink to="/checkout">Buy</StyledLink>}
+          />
         </Wrapper>
       </Section>
     </>

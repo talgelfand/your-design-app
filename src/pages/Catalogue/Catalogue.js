@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react"
-import { Form, Input } from "reactstrap"
-import CatalogueItem from "../../components/CatalogueItem"
-import styled from "styled-components"
-import { search } from "../../utils/utils"
-import Title from "../../components/Title"
-import app from "../../firebase"
-import Loading from "../../components/Loading"
-import { Context } from "../../context/context"
+import React, { useContext, useEffect, useState } from 'react'
+import { Form, Input } from 'reactstrap'
+import CatalogueItem from '../../components/CatalogueItem'
+import styled from 'styled-components'
+import { search } from '../../utils/utils'
+import Title from '../../components/Title'
+import Loading from '../../components/Loading'
+import { Context } from '../../context/context'
+import data from '../../data/data.json'
 
 const Search = styled(Input)`
   display: block;
@@ -17,28 +17,18 @@ const Search = styled(Input)`
 
 const Catalogue = () => {
   const { allCourses, setAllCourses } = useContext(Context)
-  const [initialSearch, setInitialSearch] = useState("")
-  const [searchParam] = useState(["title"]) // search only by title
+  const [initialSearch, setInitialSearch] = useState('')
+  const [searchParam] = useState(['title']) // search only by title
   const [loading, setLoading] = useState(false)
-
-  const ref = app.firestore().collection("courses")
 
   const getCourses = () => {
     setLoading(true)
-    ref.onSnapshot((querySnapshot) => {
-      const courses = []
-      querySnapshot.forEach((doc) => {
-        courses.push(doc.data())
-      })
-
-      setAllCourses(courses)
-      setLoading(false)
-    })
+    setAllCourses(data.courses)
+    setLoading(false)
   }
 
   useEffect(() => {
     getCourses()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const searchedCourses = search(allCourses, initialSearch, searchParam).map(

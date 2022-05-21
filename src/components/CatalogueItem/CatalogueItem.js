@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Card,
   CardTitle,
@@ -6,9 +6,9 @@ import {
   CardBody,
   CardText,
   CardImg,
-} from "reactstrap"
-import styled from "styled-components"
-import PrimaryLink from "../PrimaryLink"
+} from 'reactstrap'
+import styled from 'styled-components'
+import PrimaryLink from '../PrimaryLink'
 
 const Image = styled(CardImg)`
   width: 200px;
@@ -29,13 +29,13 @@ const Title = styled(CardTitle)`
   font-weight: bold;
 `
 
-const CatalogueItem = ({ id, title, image, duration, price }) => {
+const CatalogueItem = ({ id, title, image, size, price }) => {
   return (
     <StyledCard key={id}>
       <CardBody>
         <Title>{title}</Title>
-        <CardSubtitle>{duration}</CardSubtitle>
-        <CardText>{price + " euros"}</CardText>
+        <CardSubtitle>{size}</CardSubtitle>
+        <CardText>{price + ' euros'}</CardText>
         <PrimaryLink path={`/course/${id}`} text="View more" margintop />
       </CardBody>
       <Image src={image} alt={title} />

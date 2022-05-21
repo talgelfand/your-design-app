@@ -1,8 +1,7 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
-import PrimaryLink from "../../components/PrimaryLink"
-import Title from "../../components/Title"
+import React from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import Title from '../../components/Title'
 
 const StyledLink = styled(Link)`
   display: block;
@@ -18,20 +17,10 @@ const StyledLink = styled(Link)`
   }
 `
 
-const StyledText = styled.p`
-  margin-top: 30px;
-  text-align: center;
-  font-size: 20px;
-`
-
 const CheckoutSuccess = () => {
   return (
     <>
       <Title text="Thank you for the purchase!" />
-      <StyledText>
-        To find your courses please go to
-        <PrimaryLink text="My courses" path="/mycourses" />
-      </StyledText>
       <StyledLink to="/">Go back home</StyledLink>
     </>
   )

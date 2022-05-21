@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react"
-import CourseCard from "../CourseCard/CourseCard"
-import styled from "styled-components"
-import { Context } from "../../context/context"
-import { ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import { add } from "../../utils/utils"
-import Loading from "../Loading"
-import app from "../../firebase"
+import React, { useContext } from 'react'
+import CourseCard from '../CourseCard/CourseCard'
+import styled from 'styled-components'
+import { Context } from '../../context/context'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import { add } from '../../utils/utils'
+import Loading from '../Loading'
+import data from '../../data/data.json'
 
 const Section = styled.section`
   position: relative;
@@ -19,49 +19,12 @@ const Section = styled.section`
 `
 
 const CoursesGrid = () => {
-  const {
-    allCourses,
-    setAllCourses,
-    cartItems,
-    wishlistItems,
-    myCourses,
-    user,
-  } = useContext(Context)
-  const [loading, setLoading] = useState(false)
+  const { cartItems, user } = useContext(Context)
 
-  const ref = app.firestore().collection("courses").orderBy("id")
-
-  const getCourses = () => {
-    setLoading(true)
-    ref.get().then((snapshot) => {
-      const data = []
-      snapshot.forEach((doc) => {
-        data.push(doc.data())
-      })
-
-      setAllCourses(data)
-      setLoading(false)
-    })
-  }
-
-  useEffect(() => {
-    getCourses()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  if (loading) {
-    return <Loading />
-  }
-
-  const courses = allCourses.map((course) => {
+  const courses = data.courses.map((course) => {
     const addToCart = () => {
-      course.list = "cart"
-      add(cartItems, myCourses, course, user)
-    }
-
-    const addToWishlist = () => {
-      course.list = "wishlist"
-      add(wishlistItems, myCourses, course, user)
+      course.list = 'cart'
+      add(cartItems, course, user)
     }
 
     return (
@@ -70,7 +33,6 @@ const CoursesGrid = () => {
         id={course.id}
         {...course}
         addToCart={addToCart}
-        addToWishlist={addToWishlist}
       />
     )
   })

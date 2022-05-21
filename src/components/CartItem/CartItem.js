@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import {
   Card,
   CardTitle,
@@ -6,10 +6,10 @@ import {
   CardBody,
   CardText,
   CardImg,
-} from "reactstrap"
-import styled from "styled-components"
-import SecondaryButton from "../buttons/SecondaryButton"
-import PrimaryLink from "../PrimaryLink"
+} from 'reactstrap'
+import styled from 'styled-components'
+import SecondaryButton from '../buttons/SecondaryButton'
+import PrimaryLink from '../PrimaryLink'
 
 const StyledCard = styled(Card)`
   width: 650px;
@@ -28,7 +28,7 @@ const Image = styled(CardImg)`
   filter: grayscale(30%);
 `
 
-const CartItem = ({ id, title, image, duration, price, removeItem }) => {
+const CartItem = ({ id, title, image, size, price, removeItem }) => {
   const handleRemoving = (id) => {
     removeItem(id)
   }
@@ -37,7 +37,7 @@ const CartItem = ({ id, title, image, duration, price, removeItem }) => {
     <StyledCard key={id}>
       <CardBody>
         <Title>{title}</Title>
-        <CardSubtitle>{duration}</CardSubtitle>
+        <CardSubtitle>{size}</CardSubtitle>
         <CardText>{`${price} euros`}</CardText>
         <PrimaryLink path={`/course/${id}`} text="View more" />
         <SecondaryButton

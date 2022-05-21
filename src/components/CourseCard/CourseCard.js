@@ -1,8 +1,8 @@
-import React, { useState } from "react"
-import { FaHeart, FaCartPlus } from "react-icons/fa"
-import { useSpring, config, animated } from "react-spring"
-import styled from "styled-components"
-import CardLink from "../CardLink/CardLink"
+import React, { useState } from 'react'
+import { FaCartPlus } from 'react-icons/fa'
+import { useSpring, config, animated } from 'react-spring'
+import styled from 'styled-components'
+import CardLink from '../CardLink/CardLink'
 
 const Section = styled.section`
   position: relative;
@@ -51,15 +51,7 @@ const Icon = styled.div`
   }
 `
 
-const CourseCard = ({
-  id,
-  image,
-  title,
-  price,
-  duration,
-  addToWishlist,
-  addToCart,
-}) => {
+const CourseCard = ({ id, image, title, price, size, addToCart }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleHover = () => {
@@ -68,10 +60,6 @@ const CourseCard = ({
 
   const handleHoverLeave = () => {
     setIsHovered(!isHovered)
-  }
-
-  const handleAddingToWishlist = () => {
-    addToWishlist()
   }
 
   const handleAddingToCart = () => {
@@ -105,15 +93,12 @@ const CourseCard = ({
         <Span>Title:</Span> {title}
       </Subtitle>
       <Subtitle>
-        <Span>Duration:</Span> {duration}
+        <Span>Size:</Span> {size}
       </Subtitle>
       <Subtitle>
-        <Span>Price:</Span> {price + " euros"}
+        <Span>Price:</Span> {price}
       </Subtitle>
       <Wrapper>
-        <Icon>
-          <FaHeart onClick={handleAddingToWishlist} />
-        </Icon>
         <Icon>
           <FaCartPlus onClick={handleAddingToCart} />
         </Icon>

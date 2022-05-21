@@ -1,10 +1,9 @@
-import { toast } from "react-toastify"
-import { auth } from "../firebase"
-import firebase from "firebase/app"
+import { toast } from 'react-toastify'
+import { auth } from '../firebase'
+import firebase from 'firebase/app'
 
-const add = (list, myCourses, course, user) => {
+const add = (list, course, user) => {
   let contains = false
-  let myCourse = false
 
   list.forEach((item) => {
     if (item.id === course.id) {
@@ -12,32 +11,24 @@ const add = (list, myCourses, course, user) => {
     }
   })
 
-  myCourses.forEach((item) => {
-    if (item.id === course.id) {
-      myCourse = true
-    }
-  })
-
   if (auth.currentUser) {
-    if (!contains && !myCourse) {
-      const listName =
-        course.list === "wishlist" ? "wishlistItems" : "cartItems"
-      toast(`Added to ${course.list}`)
+    if (!contains) {
+      toast('Added to cart')
       list.push(course)
       user.update({
-        [listName]: firebase.firestore.FieldValue.arrayUnion(course),
+        cartItems: firebase.firestore.FieldValue.arrayUnion(course),
       })
     } else {
-      toast.error("This course is already added")
+      toast.error('This course is already added')
     }
   } else {
-    toast.error("Please log in to add a course")
+    toast.error('Please log in to add a course')
   }
 }
 
-const remove = (user, list, listName, id, item) => {
+const remove = (user, list, id, item) => {
   user.update({
-    [listName]: firebase.firestore.FieldValue.arrayRemove(item),
+    cartItems: firebase.firestore.FieldValue.arrayRemove(item),
   })
   return list.filter((course) => course.id !== id)
 }

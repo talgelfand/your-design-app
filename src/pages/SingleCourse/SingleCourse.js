@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from "react"
-import { Redirect, useParams } from "react-router-dom"
-import { Context } from "../../context/context"
-import { ToastContainer } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-import Title from "../../components/Title"
-import PrimaryButton from "../../components/buttons/PrimaryButton"
-import { add } from "../../utils/utils"
-import styled from "styled-components"
-import app from "../../firebase"
-import Loading from "../../components/Loading"
+import React, { useContext, useEffect, useState } from 'react'
+import { Redirect, useParams } from 'react-router-dom'
+import { Context } from '../../context/context'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import Title from '../../components/Title'
+import PrimaryButton from '../../components/buttons/PrimaryButton'
+import { add } from '../../utils/utils'
+import styled from 'styled-components'
+import Loading from '../../components/Loading'
+import data from '../../data/data.json'
 
 const Content = styled.div`
   display: grid;
@@ -45,29 +45,24 @@ const Wrapper = styled.div`
 `
 
 const SingleCourse = () => {
-  const { myCourses, user } = useContext(Context)
+  const { user } = useContext(Context)
   const [course, setCourse] = useState({})
   const [loading, setLoading] = useState(false)
   const { id } = useParams()
 
-  const { cartItems, wishlistItems } = useContext(Context)
-
-  const ref = app.firestore().collection("courses")
+  const { cartItems } = useContext(Context)
 
   const getCourse = () => {
     setLoading(true)
-    ref
-      .doc(id)
-      .get()
-      .then((doc) => {
-        setCourse(doc.data())
-        setLoading(false)
-      })
+    const targetCourse = data.courses.find(
+      (course) => course.id === parseInt(id)
+    )
+    setCourse(targetCourse)
+    setLoading(false)
   }
 
   useEffect(() => {
     getCourse()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (!course) {
@@ -75,20 +70,16 @@ const SingleCourse = () => {
   }
 
   const addToCart = () => {
-    course.list = "cart"
-    add(cartItems, myCourses, course, user)
-  }
-
-  const addToWishlist = () => {
-    course.list = "wishlist"
-    add(wishlistItems, myCourses, course, user)
+    course.list = 'cart'
+    add(cartItems, course, user)
   }
 
   if (loading) {
     return <Loading />
   }
 
-  const { title, image, duration, requirements, price } = course
+  //  TODO: add a section for size
+  const { title, image, size, price } = course
 
   return (
     <>
@@ -97,17 +88,14 @@ const SingleCourse = () => {
         <Image src={image} alt={title} />
         <div>
           <Subtitle>
-            <Span>Duration: </Span>
-            {duration}
-          </Subtitle>
-          <Subtitle>
-            <Span>Requirements: </Span>
-            {requirements || "none"}
+            <Span>Size: </Span>
+            {size}
           </Subtitle>
           <Subtitle>
             <Span>Price: </Span>
             {`${price} euros`}
           </Subtitle>
+          {/* TODO: update description */}
           <Text>
             But I must explain to you how all this mistaken idea of denouncing
             pleasure and praising pain was born and I will give you a complete
@@ -127,7 +115,6 @@ const SingleCourse = () => {
           </Text>
           <Wrapper>
             <PrimaryButton text="Add to cart" clickEvent={addToCart} />
-            <PrimaryButton text="Add to wishlist" clickEvent={addToWishlist} />
           </Wrapper>
         </div>
       </Content>
