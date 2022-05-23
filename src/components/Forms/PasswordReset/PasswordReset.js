@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext } from "react"
+import React, { useRef, useState, useContext } from "react";
 import {
   Form,
   FormGroup,
@@ -7,44 +7,44 @@ import {
   Alert,
   Card,
   CardBody,
-} from "reactstrap"
-import styled from "styled-components"
-import { Context } from "../../../context/context"
-import PrimaryButton from "../../buttons/PrimaryButton"
+} from "reactstrap";
+import styled from "styled-components";
+import { Context } from "../../../context/context";
+import PrimaryButton from "../../buttons/PrimaryButton";
 
 const StyledCard = styled(Card)`
   margin-top: 30px;
-`
+`;
 
 const StyledLabel = styled(Label)`
   margin-top: 20px;
-`
+`;
 
 const StyledInput = styled(Input)`
   margin-top: 10px;
-`
+`;
 
 const PasswordReset = () => {
-  const emailRef = useRef()
-  const { resetPassword } = useContext(Context)
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
-  const [message, setMessage] = useState("")
+  const emailRef = useRef();
+  const { resetPassword } = useContext(Context);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      setMessage("")
-      setError("")
-      setLoading(true)
-      await resetPassword(emailRef.current.value)
-      setMessage("Check your inbox for further instructions")
+      setMessage("");
+      setError("");
+      setLoading(true);
+      await resetPassword(emailRef.current.value);
+      setMessage("Check your inbox for further instructions");
     } catch {
-      setError("Failed to reset password")
+      setError("Failed to reset password");
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   return (
     <StyledCard>
@@ -66,7 +66,7 @@ const PasswordReset = () => {
         </Form>
       </CardBody>
     </StyledCard>
-  )
-}
+  );
+};
 
-export default PasswordReset
+export default PasswordReset;

@@ -1,6 +1,6 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   position: absolute;
@@ -13,14 +13,14 @@ const StyledLink = styled(Link)`
   &:hover {
     color: var(--accent-color);
   }
-`
+`;
 
 const CardLink = ({ path, text, ...props }) => {
   return (
     <StyledLink to={path} {...props}>
       {text}
     </StyledLink>
-  )
-}
+  );
+};
 
-export default CardLink
+export default CardLink;

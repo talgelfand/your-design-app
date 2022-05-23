@@ -1,6 +1,6 @@
-import React from "react"
-import { Button } from "reactstrap"
-import styled from "styled-components"
+import React from "react";
+import { Button } from "reactstrap";
+import styled from "styled-components";
 
 const StyledButton = styled(Button)`
   display: block;
@@ -12,14 +12,14 @@ const StyledButton = styled(Button)`
     background-color: ${(props) =>
       props.darkbg ? "var(--bg-color)" : "var(--dark-color)"};
   }
-`
+`;
 
 const PrimaryButton = ({ text, type, clickEvent, ...props }) => {
   return (
     <StyledButton onClick={clickEvent} type={type} {...props}>
       {text}
     </StyledButton>
-  )
-}
+  );
+};
 
-export default PrimaryButton
+export default PrimaryButton;

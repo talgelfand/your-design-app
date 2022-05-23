@@ -1,2 +1,2 @@
-import ProductsGrid from './ProductsGrid'
-export default ProductsGrid
+import ProductsGrid from "./ProductsGrid";
+export default ProductsGrid;

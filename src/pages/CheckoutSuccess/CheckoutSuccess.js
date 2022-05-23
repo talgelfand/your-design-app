@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import Title from '../../components/Title'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import Title from "../../components/Title";
 
 const StyledLink = styled(Link)`
   display: block;
@@ -15,7 +15,7 @@ const StyledLink = styled(Link)`
     color: var(--primary-color);
     transform: scale(1.2);
   }
-`
+`;
 
 const CheckoutSuccess = () => {
   return (
@@ -23,7 +23,7 @@ const CheckoutSuccess = () => {
       <Title text="Thank you for the purchase!" />
       <StyledLink to="/">Go back home</StyledLink>
     </>
-  )
-}
+  );
+};
 
-export default CheckoutSuccess
+export default CheckoutSuccess;

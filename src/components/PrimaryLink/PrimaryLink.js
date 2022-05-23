@@ -1,6 +1,6 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   display: block;
@@ -10,14 +10,14 @@ const StyledLink = styled(Link)`
   &:hover {
     color: var(--accent-color);
   }
-`
+`;
 
 const PrimaryLink = ({ path, text, ...props }) => {
   return (
     <StyledLink to={path} {...props}>
       {text}
     </StyledLink>
-  )
-}
+  );
+};
 
-export default PrimaryLink
+export default PrimaryLink;

@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
-import cart from './cart.png'
-import { Link, useHistory } from 'react-router-dom'
-import styled from 'styled-components'
-import { Context } from '../../context/context'
-import PrimaryButton from '../buttons/PrimaryButton'
-import DropdownList from '../DropdownList'
+import React, { useContext } from "react";
+import cart from "./cart.png";
+import { Link, useHistory } from "react-router-dom";
+import styled from "styled-components";
+import { Context } from "../../context/context";
+import PrimaryButton from "../buttons/PrimaryButton";
+import DropdownList from "../DropdownList";
 
 const Section = styled.section`
   position: fixed;
@@ -18,7 +18,7 @@ const Section = styled.section`
   justify-content: space-between;
   align-items: center;
   z-index: 1;
-`
+`;
 
 const Title = styled(Link)`
   color: #fff;
@@ -27,25 +27,25 @@ const Title = styled(Link)`
   &:hover {
     color: #fff;
   }
-`
+`;
 
 const Menu = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-`
+`;
 
 const CartLink = styled(Link)`
   width: 10%;
-`
+`;
 
 const CartIcon = styled.img`
   width: 70%;
-`
+`;
 
 const Header = () => {
-  const { currentUser } = useContext(Context)
-  const history = useHistory()
+  const { currentUser } = useContext(Context);
+  const history = useHistory();
 
   return (
     <Section>
@@ -59,13 +59,13 @@ const Header = () => {
         ) : (
           <PrimaryButton
             text="Sign in"
-            clickEvent={() => history.push('/login')}
+            clickEvent={() => history.push("/login")}
             darkbg
           />
         )}
       </Menu>
     </Section>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

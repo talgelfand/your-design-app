@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Section = styled.section`
   display: flex;
   justify-content: center;
   position: relative;
   top: 160px;
-`
+`;
 
 const StyledLink = styled(Link)`
   margin: 0 30px 0 30px;
@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
     color: var(--primary-color);
     transform: scale(1.2);
   }
-`
+`;
 
 const Navbar = () => {
   return (
@@ -29,7 +29,7 @@ const Navbar = () => {
       <StyledLink to="/catalogue">Catalogue</StyledLink>
       <StyledLink to="/contacts">Contacts</StyledLink>
     </Section>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
