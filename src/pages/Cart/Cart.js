@@ -54,10 +54,10 @@ const Cart = () => {
   const { cartItems, setCartItems, user } = useContext(Context)
   const [loading, setLoading] = useState(false)
   let totalPrice = 0
-  const amountOfCourses = cartItems && cartItems.length
+  const numberOfProducts = cartItems && cartItems.length
   const history = useHistory()
 
-  const getCourses = () => {
+  const getProducts = () => {
     setLoading(true)
     user.get().then((doc) => {
       setCartItems(doc.data()['cartItems'])
@@ -73,11 +73,11 @@ const Cart = () => {
   }
 
   useEffect(() => {
-    getCourses()
+    getProducts()
     getUserData()
   }, [])
 
-  const clearAllCourses = () => {
+  const clearAllProducts = () => {
     user.update({ cartItems: [] })
     setCartItems([])
   }
@@ -90,7 +90,7 @@ const Cart = () => {
     return totalPrice
   }
 
-  const courses = cartItems.map((item) => {
+  const products = cartItems.map((item) => {
     const removeItem = (id) => {
       const newItems = remove(user, cartItems, id, item)
       setCartItems(newItems)
@@ -103,8 +103,8 @@ const Cart = () => {
     return <Loading />
   }
 
-  if (courses.length === 0) {
-    return <Title text="No courses added to cart" />
+  if (products.length === 0) {
+    return <Title text="No products added to cart" />
   }
 
   const handleSubmit = () => {
@@ -115,13 +115,13 @@ const Cart = () => {
   return (
     <>
       <Section>
-        {courses}
-        <StyledButton color="link" onClick={clearAllCourses}>
+        {products}
+        <StyledButton color="link" onClick={clearAllProducts}>
           Clear all
         </StyledButton>
         <Wrapper>
           <div>
-            <TotalItems>{`${amountOfCourses} course(s)`}</TotalItems>
+            <TotalItems>{`${numberOfProducts} product(s)`}</TotalItems>
             <TotalPrice>{`Total: ${countTotalPrice()} euros`}</TotalPrice>
           </div>
           <PrimaryButton

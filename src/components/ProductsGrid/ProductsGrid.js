@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import CourseCard from '../CourseCard/CourseCard'
+import ProductCard from '../ProductCard/ProductCard'
 import styled from 'styled-components'
 import { Context } from '../../context/context'
 import { ToastContainer } from 'react-toastify'
@@ -18,20 +18,20 @@ const Section = styled.section`
   gap: 10px;
 `
 
-const CoursesGrid = () => {
+const ProductsGrid = () => {
   const { cartItems, user } = useContext(Context)
 
-  const courses = data.courses.map((course) => {
+  const products = data.products.map((product) => {
     const addToCart = () => {
-      course.list = 'cart'
-      add(cartItems, course, user)
+      product.list = 'cart'
+      add(cartItems, product, user)
     }
 
     return (
-      <CourseCard
-        key={course.id}
-        id={course.id}
-        {...course}
+      <ProductCard
+        key={product.id}
+        id={product.id}
+        {...product}
         addToCart={addToCart}
       />
     )
@@ -39,10 +39,10 @@ const CoursesGrid = () => {
 
   return (
     <Section>
-      {courses || <Loading />}
+      {products || <Loading />}
       <ToastContainer />
     </Section>
   )
 }
 
-export default CoursesGrid
+export default ProductsGrid

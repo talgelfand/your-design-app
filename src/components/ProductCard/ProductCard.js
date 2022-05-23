@@ -51,7 +51,7 @@ const Icon = styled.div`
   }
 `
 
-const CourseCard = ({ id, image, title, price, size, addToCart }) => {
+const ProductCard = ({ id, image, title, price, size, addToCart }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleHover = () => {
@@ -77,12 +77,7 @@ const CourseCard = ({ id, image, title, price, size, addToCart }) => {
   if (!isHovered) {
     return (
       <animated.div style={fadeStyles}>
-        <Image
-          src={image}
-          alt={title}
-          className="courseCard__image"
-          onMouseEnter={handleHover}
-        />
+        <Image src={image} alt={title} onMouseEnter={handleHover} />
       </animated.div>
     )
   }
@@ -103,9 +98,9 @@ const CourseCard = ({ id, image, title, price, size, addToCart }) => {
           <FaCartPlus onClick={handleAddingToCart} />
         </Icon>
       </Wrapper>
-      <CardLink path={`course/${id}`} text="View more" bold />
+      <CardLink path={`product/${id}`} text="View more" bold />
     </Section>
   )
 }
 
-export default CourseCard
+export default ProductCard

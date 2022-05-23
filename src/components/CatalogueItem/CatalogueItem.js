@@ -36,7 +36,7 @@ const CatalogueItem = ({ id, title, image, size, price }) => {
         <Title>{title}</Title>
         <CardSubtitle>{size}</CardSubtitle>
         <CardText>{price + ' euros'}</CardText>
-        <PrimaryLink path={`/course/${id}`} text="View more" margintop />
+        <PrimaryLink path={`/product/${id}`} text="View more" margintop />
       </CardBody>
       <Image src={image} alt={title} />
     </StyledCard>

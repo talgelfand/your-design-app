@@ -5,7 +5,7 @@ import firebase from 'firebase/app'
 const Context = createContext()
 
 const ContextProvider = ({ children }) => {
-  const [allCourses, setAllCourses] = useState([])
+  const [allProducts, setAllProducts] = useState([])
   const [cartItems, setCartItems] = useState([])
   const [currentUser, setCurrentUser] = useState()
   const [authLoading, setAuthLoading] = useState(true)
@@ -53,9 +53,9 @@ const ContextProvider = ({ children }) => {
   return (
     <Context.Provider
       value={{
-        allCourses,
+        allProducts,
         cartItems,
-        setAllCourses,
+        setAllProducts,
         setCartItems,
         signup,
         login,

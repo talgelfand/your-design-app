@@ -6,7 +6,7 @@ import ErrorPage from '../pages/ErrorPage'
 import Catalogue from '../pages/Catalogue/Catalogue'
 import About from '../pages/About'
 import Contacts from '../pages/Contacts'
-import SingleCourse from '../pages/SingleCourse'
+import SingleProduct from '../pages/SingleProduct'
 import Cart from '../pages/Cart'
 import SignupPage from '../pages/SignupPage'
 import LoginPage from '../pages/LoginPage'
@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/contacts" component={Contacts} />
           <PrivateRoute path="/cart" component={Cart} />
           <PrivateRoute path="/success" component={CheckoutSuccess} />
-          <Route path="/course/:id" component={SingleCourse} />
+          <Route path="/product/:id" component={SingleProduct} />
           <Route path="*" component={ErrorPage} />
         </Switch>
       </Router>

@@ -44,34 +44,34 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `
 
-const SingleCourse = () => {
+const SingleProduct = () => {
   const { user } = useContext(Context)
-  const [course, setCourse] = useState({})
+  const [product, setProduct] = useState({})
   const [loading, setLoading] = useState(false)
   const { id } = useParams()
 
   const { cartItems } = useContext(Context)
 
-  const getCourse = () => {
+  const getProduct = () => {
     setLoading(true)
-    const targetCourse = data.courses.find(
-      (course) => course.id === parseInt(id)
+    const targetProduct = data.products.find(
+      (product) => product.id === parseInt(id)
     )
-    setCourse(targetCourse)
+    setProduct(targetProduct)
     setLoading(false)
   }
 
   useEffect(() => {
-    getCourse()
+    getProduct()
   }, [])
 
-  if (!course) {
+  if (!product) {
     return <Redirect to="/error" />
   }
 
   const addToCart = () => {
-    course.list = 'cart'
-    add(cartItems, course, user)
+    product.list = 'cart'
+    add(cartItems, product, user)
   }
 
   if (loading) {
@@ -79,7 +79,7 @@ const SingleCourse = () => {
   }
 
   //  TODO: add a section for size
-  const { title, image, size, price } = course
+  const { title, image, size, price } = product
 
   return (
     <>
@@ -123,4 +123,4 @@ const SingleCourse = () => {
   )
 }
 
-export default SingleCourse
+export default SingleProduct

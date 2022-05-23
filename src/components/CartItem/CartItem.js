@@ -39,7 +39,7 @@ const CartItem = ({ id, title, image, size, price, removeItem }) => {
         <Title>{title}</Title>
         <CardSubtitle>{size}</CardSubtitle>
         <CardText>{`${price} euros`}</CardText>
-        <PrimaryLink path={`/course/${id}`} text="View more" />
+        <PrimaryLink path={`/product/${id}`} text="View more" />
         <SecondaryButton
           text="Remove"
           margintop

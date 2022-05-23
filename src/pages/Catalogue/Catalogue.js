@@ -16,24 +16,24 @@ const Search = styled(Input)`
 `
 
 const Catalogue = () => {
-  const { allCourses, setAllCourses } = useContext(Context)
+  const { allProducts, setAllProducts } = useContext(Context)
   const [initialSearch, setInitialSearch] = useState('')
   const [searchParam] = useState(['title']) // search only by title
   const [loading, setLoading] = useState(false)
 
-  const getCourses = () => {
+  const getProducts = () => {
     setLoading(true)
-    setAllCourses(data.courses)
+    setAllProducts(data.products)
     setLoading(false)
   }
 
   useEffect(() => {
-    getCourses()
+    getProducts()
   }, [])
 
-  const searchedCourses = search(allCourses, initialSearch, searchParam).map(
-    (course) => {
-      return <CatalogueItem key={course.id} {...course} />
+  const searchedProducts = search(allProducts, initialSearch, searchParam).map(
+    (product) => {
+      return <CatalogueItem key={product.id} {...product} />
     }
   )
 
@@ -57,10 +57,10 @@ const Catalogue = () => {
           onChange={(e) => setInitialSearch(e.target.value)}
         />
       </Form>
-      {searchedCourses.length === 0 ? (
-        <Title text="No courses were found" />
+      {searchedProducts.length === 0 ? (
+        <Title text="No products were found" />
       ) : (
-        searchedCourses
+        searchedProducts
       )}
     </>
   )
