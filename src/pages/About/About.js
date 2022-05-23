@@ -1,17 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import Title from "../../components/Title";
+import React from 'react'
+import styled from 'styled-components'
+import Title from '../../components/Title'
 
 const Description = styled.p`
   padding: 50px 500px;
-`;
+`
 
 const About = () => {
   return (
     <>
-      <Title text="About our academy" />
+      <Title text="About our brand" />
       <Description>
-        <strong>The academy was found on 22nd of May, 2021.</strong>
+        <strong>The brand was found on 22nd of May, 2021.</strong>
         <br /> <br /> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
         Nesciunt nobis voluptatum mollitia dolore perferendis, adipisci neque
         sit reprehenderit cumque voluptates provident aliquam amet officia
@@ -26,7 +26,7 @@ const About = () => {
         quaerat voluptates nostrum aut perspiciatis.
       </Description>
     </>
-  );
-};
+  )
+}
 
-export default About;
+export default About
