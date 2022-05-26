@@ -21,7 +21,6 @@ const Section = styled.section`
   z-index: 1;
 `;
 
-
 const Title = styled(Link)`
   color: #fff;
   text-decoration: none;
@@ -59,9 +58,9 @@ const Header = () => {
 
   return (
     <Section>
-        <LogoLink to="/">
-          <LogoIcon src={logo} alt="logo" />
-        </LogoLink>
+      <LogoLink to="/">
+        <LogoIcon src={logo} alt="logo" />
+      </LogoLink>
       <Menu>
         <CartLink to="/cart">
           <CartIcon src={cart} alt="cart" />

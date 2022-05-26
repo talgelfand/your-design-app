@@ -1,6 +1,6 @@
-import React from 'react'
-import { Card, CardBody } from 'reactstrap'
-import styled from 'styled-components'
+import React from "react";
+import { Card, CardBody } from "reactstrap";
+import styled from "styled-components";
 
 const StyledCard = styled(Card)`
   padding: 20px;
@@ -8,18 +8,18 @@ const StyledCard = styled(Card)`
   display: block;
   margin: 0 auto;
   margin-top: 50px;
-`
+`;
 
 const Span = styled.span`
   font-weight: bold;
-`
+`;
 
 const StyledLink = styled.a`
   color: var(--dark-color);
   &:hover {
     color: var(--accent-color);
   }
-`
+`;
 
 const Contact = () => {
   return (
@@ -34,7 +34,7 @@ const Contact = () => {
               </StyledLink>
             </li>
             <li>
-              <Span>Phone: </Span>{' '}
+              <Span>Phone: </Span>{" "}
               <StyledLink href="tel:+37122345678">+371 22345678</StyledLink>
             </li>
             <li>
@@ -47,7 +47,7 @@ const Contact = () => {
         </CardBody>
       </StyledCard>
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

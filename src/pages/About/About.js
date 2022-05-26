@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import Title from '../../components/Title'
+import React from "react";
+import styled from "styled-components";
+import Title from "../../components/Title";
 
 const Description = styled.p`
   padding: 50px 500px;
-`
+`;
 
 const About = () => {
   return (
@@ -21,7 +21,7 @@ const About = () => {
         viedokli, uzlabojot produktu.
       </Description>
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

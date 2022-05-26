@@ -22,7 +22,9 @@ const add = (list, product, user) => {
       toast.error("Šis produkts jau ir pievienots grozam");
     }
   } else {
-    toast.error("Lūdzu ielagojieties sava kontā, lai pievienotu produktu grozam");
+    toast.error(
+      "Lūdzu ielagojieties sava kontā, lai pievienotu produktu grozam"
+    );
   }
 };
 
