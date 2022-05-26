@@ -1,72 +1,58 @@
-import React, { useRef, useState, useContext } from "react";
-import {
-  Form,
-  FormGroup,
-  Input,
-  Label,
-  Alert,
-  Card,
-  CardBody,
-} from "reactstrap";
-import styled from "styled-components";
-import { Context } from "../../../context/context";
-import PrimaryButton from "../../buttons/PrimaryButton";
+import React, { useRef, useState, useContext } from 'react'
+import { Form, FormGroup, Input, Label, Alert, Card, CardBody } from 'reactstrap'
+import styled from 'styled-components'
+import { Context } from '../../../context/context'
+import PrimaryButton from '../../buttons/PrimaryButton'
 
 const StyledCard = styled(Card)`
   margin-top: 30px;
-`;
+`
 
 const StyledLabel = styled(Label)`
   margin-top: 20px;
-`;
+`
 
 const StyledInput = styled(Input)`
   margin-top: 10px;
-`;
+`
 
 const PasswordReset = () => {
-  const emailRef = useRef();
-  const { resetPassword } = useContext(Context);
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const emailRef = useRef()
+  const { resetPassword } = useContext(Context)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('')
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      setMessage("");
-      setError("");
-      setLoading(true);
-      await resetPassword(emailRef.current.value);
-      setMessage("Check your inbox for further instructions");
+      setMessage('')
+      setError('')
+      setLoading(true)
+      await resetPassword(emailRef.current.value)
+      setMessage('Check your inbox for further instructions')
     } catch {
-      setError("Failed to reset password");
+      setError('Failed to reset password')
     }
-    setLoading(false);
-  };
+    setLoading(false)
+  }
 
   return (
     <StyledCard>
       <CardBody>
-        {error && <Alert color="danger">{error}</Alert>}
-        {message && <Alert color="success">{message}</Alert>}
+        {error && <Alert color='danger'>{error}</Alert>}
+        {message && <Alert color='success'>{message}</Alert>}
         <Form onSubmit={handleSubmit}>
           <FormGroup>
-            <StyledLabel for="email">Email:</StyledLabel>
-            <StyledInput innerRef={emailRef} type="email" id="email" />
+            <StyledLabel for='email'>Email:</StyledLabel>
+            <StyledInput innerRef={emailRef} type='email' id='email' />
           </FormGroup>
-          <PrimaryButton
-            text="Reset"
-            disabled={loading}
-            type="submit"
-            centered
-            margintop
-          />
+          <PrimaryButton text='Reset' disabled={loading} type='submit' centered margintop />
         </Form>
       </CardBody>
     </StyledCard>
-  );
-};
+  )
+}
 
-export default PasswordReset;
+export default PasswordReset

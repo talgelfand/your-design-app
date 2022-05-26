@@ -1,2 +1,2 @@
-import DropdownList from "./DropdownList";
-export default DropdownList;
+import DropdownList from './DropdownList'
+export default DropdownList

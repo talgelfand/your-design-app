@@ -1,2 +1,2 @@
-import SecondaryButton from "./SecondaryButton";
-export default SecondaryButton;
+import SecondaryButton from './SecondaryButton'
+export default SecondaryButton

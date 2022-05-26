@@ -1,2 +1,2 @@
-import PasswordReset from "./PasswordReset";
-export default PasswordReset;
+import PasswordReset from './PasswordReset'
+export default PasswordReset

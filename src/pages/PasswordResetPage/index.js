@@ -1,2 +1,2 @@
-import PasswordResetPage from "./PasswordResetPage";
-export default PasswordResetPage;
+import PasswordResetPage from './PasswordResetPage'
+export default PasswordResetPage

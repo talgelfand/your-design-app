@@ -1,18 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useHistory } from "react-router";
-import { Context } from "../../context/context";
-import styled from "styled-components";
-import { Button } from "reactstrap";
-import CartItem from "../../components/CartItem";
-import { remove } from "../../utils/utils";
-import Title from "../../components/Title";
-import PrimaryButton from "../../components/buttons/PrimaryButton";
-import { Link } from "react-router-dom";
-import Loading from "../../components/Loading";
+import React, { useContext, useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
+import { Context } from '../../context/context'
+import styled from 'styled-components'
+import { Button } from 'reactstrap'
+import CartItem from '../../components/CartItem'
+import { remove } from '../../utils/utils'
+import Title from '../../components/Title'
+import PrimaryButton from '../../components/buttons/PrimaryButton'
+import { Link } from 'react-router-dom'
+import Loading from '../../components/Loading'
 
 const Section = styled.section`
   margin-top: 200px;
-`;
+`
 const StyledButton = styled(Button)`
   display: block;
   margin: 0 auto;
@@ -22,7 +22,7 @@ const StyledButton = styled(Button)`
   &:hover {
     color: var(--accent-color);
   }
-`;
+`
 
 const StyledLink = styled(Link)`
   color: #fff;
@@ -30,16 +30,16 @@ const StyledLink = styled(Link)`
   &:hover {
     color: #fff;
   }
-`;
+`
 
 const TotalItems = styled.h3`
   font-size: 18px;
-`;
+`
 
 const TotalPrice = styled.h2`
   margin-top: 20px;
   font-size: 20px;
-`;
+`
 
 const Wrapper = styled.div`
   display: flex;
@@ -48,75 +48,75 @@ const Wrapper = styled.div`
   margin-top: 40px;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 const Cart = () => {
-  const { cartItems, setCartItems, user } = useContext(Context);
-  const [loading, setLoading] = useState(false);
-  let totalPrice = 0;
-  const numberOfProducts = cartItems && cartItems.length;
-  const history = useHistory();
+  const { cartItems, setCartItems, user } = useContext(Context)
+  const [loading, setLoading] = useState(false)
+  let totalPrice = 0
+  const numberOfProducts = cartItems && cartItems.length
+  const history = useHistory()
 
   const getProducts = () => {
-    setLoading(true);
+    setLoading(true)
     user.get().then((doc) => {
-      setCartItems(doc.data()["cartItems"]);
-      setLoading(false);
-    });
-  };
+      setCartItems(doc.data()['cartItems'])
+      setLoading(false)
+    })
+  }
 
   const getUserData = () => {
-    setLoading(true);
+    setLoading(true)
     user.get().then((doc) => {
-      setCartItems(doc.data()["cartItems"]);
-    });
-  };
+      setCartItems(doc.data()['cartItems'])
+    })
+  }
 
   useEffect(() => {
-    getProducts();
-    getUserData();
-  }, []);
+    getProducts()
+    getUserData()
+  }, [])
 
   const clearAllProducts = () => {
-    user.update({ cartItems: [] });
-    setCartItems([]);
-  };
+    user.update({ cartItems: [] })
+    setCartItems([])
+  }
 
   const countTotalPrice = () => {
     cartItems.forEach((item) => {
-      totalPrice += parseFloat(item.price);
-    });
+      totalPrice += parseFloat(item.price)
+    })
 
-    return totalPrice;
-  };
+    return totalPrice
+  }
 
   const products = cartItems.map((item) => {
     const removeItem = (id) => {
-      const newItems = remove(user, cartItems, id, item);
-      setCartItems(newItems);
-    };
+      const newItems = remove(user, cartItems, id, item)
+      setCartItems(newItems)
+    }
 
-    return <CartItem key={item.id} {...item} removeItem={removeItem} />;
-  });
+    return <CartItem key={item.id} {...item} removeItem={removeItem} />
+  })
 
   if (loading) {
-    return <Loading />;
+    return <Loading />
   }
 
   if (products.length === 0) {
-    return <Title text="Nekadi produkti vēl nebija pievienotie grozam." />;
+    return <Title text='Nekadi produkti vēl nebija pievienotie grozam.' />
   }
 
   const handleSubmit = () => {
-    user.update({ cartItems: [] });
-    history.push("/success");
-  };
+    user.update({ cartItems: [] })
+    history.push('/success')
+  }
 
   return (
     <>
       <Section>
         {products}
-        <StyledButton color="link" onClick={clearAllProducts}>
+        <StyledButton color='link' onClick={clearAllProducts}>
           Clear all
         </StyledButton>
         <Wrapper>
@@ -124,14 +124,11 @@ const Cart = () => {
             <TotalItems>{`${numberOfProducts} product(s)`}</TotalItems>
             <TotalPrice>{`Total: ${countTotalPrice()} euros`}</TotalPrice>
           </div>
-          <PrimaryButton
-            clickEvent={handleSubmit}
-            text={<StyledLink to="/checkout">Buy</StyledLink>}
-          />
+          <PrimaryButton clickEvent={handleSubmit} text={<StyledLink to='/checkout'>Buy</StyledLink>} />
         </Wrapper>
       </Section>
     </>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart

@@ -1,2 +1,2 @@
-import PrimaryLink from "./PrimaryLink";
-export default PrimaryLink;
+import PrimaryLink from './PrimaryLink'
+export default PrimaryLink

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { FaCartPlus } from "react-icons/fa";
-import { useSpring, config, animated } from "react-spring";
-import styled from "styled-components";
-import CardLink from "../CardLink/CardLink";
+import React, { useState } from 'react'
+import { FaCartPlus } from 'react-icons/fa'
+import { useSpring, config, animated } from 'react-spring'
+import styled from 'styled-components'
+import CardLink from '../CardLink/CardLink'
 
 const Section = styled.section`
   position: relative;
@@ -13,23 +13,23 @@ const Section = styled.section`
   background-color: var(--bg-color);
   box-shadow: 0 0 5px var(--dark-color);
   transition: all 1s;
-`;
+`
 
 const Image = styled.img`
   width: 300px;
   height: 300px;
   object-fit: cover;
   filter: grayscale(50%);
-`;
+`
 
 const Subtitle = styled.h2`
   font-size: 18px;
   margin-top: 10px;
-`;
+`
 
 const Span = styled.span`
   font-weight: bold;
-`;
+`
 const Wrapper = styled.div`
   position: absolute;
   transform: translateX(-50%);
@@ -37,7 +37,7 @@ const Wrapper = styled.div`
   bottom: 65px;
   display: flex;
   justify-content: center;
-`;
+`
 
 const Icon = styled.div`
   margin: 0 30px;
@@ -49,22 +49,22 @@ const Icon = styled.div`
     transform: scale(1.5);
     color: var(--accent-color);
   }
-`;
+`
 
 const ProductCard = ({ id, image, title, price, size, addToCart }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleHover = () => {
-    setIsHovered(!isHovered);
-  };
+    setIsHovered(!isHovered)
+  }
 
   const handleHoverLeave = () => {
-    setIsHovered(!isHovered);
-  };
+    setIsHovered(!isHovered)
+  }
 
   const handleAddingToCart = () => {
-    addToCart();
-  };
+    addToCart()
+  }
 
   const fadeStyles = useSpring({
     config: { ...config.stiff, friction: 18 },
@@ -72,14 +72,14 @@ const ProductCard = ({ id, image, title, price, size, addToCart }) => {
     to: {
       opacity: !isHovered ? 1 : 0,
     },
-  });
+  })
 
   if (!isHovered) {
     return (
       <animated.div style={fadeStyles}>
         <Image src={image} alt={title} onMouseEnter={handleHover} />
       </animated.div>
-    );
+    )
   }
 
   return (
@@ -98,9 +98,9 @@ const ProductCard = ({ id, image, title, price, size, addToCart }) => {
           <FaCartPlus onClick={handleAddingToCart} />
         </Icon>
       </Wrapper>
-      <CardLink path={`product/${id}`} text="View more" bold />
+      <CardLink path={`product/${id}`} text='View more' bold />
     </Section>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard

@@ -1,39 +1,34 @@
-import React, { useContext, useState } from "react";
-import { useHistory } from "react-router";
-import {
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-} from "reactstrap";
-import styled from "styled-components";
-import { Context } from "../../context/context";
+import React, { useContext, useState } from 'react'
+import { useHistory } from 'react-router'
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap'
+import styled from 'styled-components'
+import { Context } from '../../context/context'
 
 const StyledDropdown = styled(DropdownToggle)`
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-`;
+`
 
 const DropdownList = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false)
   const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+    setDropdownOpen(!dropdownOpen)
+  }
 
-  const [error, setError] = useState("");
-  const { currentUser, logout } = useContext(Context);
-  const history = useHistory();
+  const [error, setError] = useState('')
+  const { currentUser, logout } = useContext(Context)
+  const history = useHistory()
 
   const handleLogout = async () => {
-    setError("");
+    setError('')
 
     try {
-      await logout();
-      history.push("/login");
+      await logout()
+      history.push('/login')
     } catch {
-      setError("Failed to log out");
+      setError('Failed to log out')
     }
-  };
+  }
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
@@ -43,7 +38,7 @@ const DropdownList = () => {
         {error && <DropdownItem disabled>{error}</DropdownItem>}
       </DropdownMenu>
     </Dropdown>
-  );
-};
+  )
+}
 
-export default DropdownList;
+export default DropdownList
