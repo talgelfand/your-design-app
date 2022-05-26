@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import cart from "./cart.png";
+import logo from "./logo.jpg";
 import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Context } from "../../context/context";
@@ -19,6 +20,7 @@ const Section = styled.section`
   align-items: center;
   z-index: 1;
 `;
+
 
 const Title = styled(Link)`
   color: #fff;
@@ -43,13 +45,23 @@ const CartIcon = styled.img`
   width: 70%;
 `;
 
+const LogoLink = styled(Link)`
+  width: 10%;
+`;
+
+const LogoIcon = styled.img`
+  width: 90%;
+`;
+
 const Header = () => {
   const { currentUser } = useContext(Context);
   const history = useHistory();
 
   return (
     <Section>
-      <Title to="/">Your Design</Title>
+        <LogoLink to="/">
+          <LogoIcon src={logo} alt="logo" />
+        </LogoLink>
       <Menu>
         <CartLink to="/cart">
           <CartIcon src={cart} alt="cart" />

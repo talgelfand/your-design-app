@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Redirect, useParams } from "react-router-dom";
-import { Context } from "../../context/context";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Title from "../../components/Title";
-import PrimaryButton from "../../components/buttons/PrimaryButton";
-import { add } from "../../utils/utils";
-import styled from "styled-components";
-import Loading from "../../components/Loading";
-import data from "../../data/data.json";
+import React, { useContext, useEffect, useState } from 'react'
+import { Redirect, useParams } from 'react-router-dom'
+import { Context } from '../../context/context'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import Title from '../../components/Title'
+import PrimaryButton from '../../components/buttons/PrimaryButton'
+import { add } from '../../utils/utils'
+import styled from 'styled-components'
+import Loading from '../../components/Loading'
+import data from '../../data/data.json'
 
 const Content = styled.div`
   display: grid;
@@ -19,67 +19,67 @@ const Content = styled.div`
   margin-top: 50px;
   justify-content: space-between;
   align-items: stretch;
-`;
+`
 
 const Image = styled.img`
   width: 400px;
   object-fit: cover;
-`;
+`
 
 const Span = styled.span`
   font-weight: bold;
-`;
+`
 
 const Subtitle = styled.h2`
   font-weight: normal;
   font-size: 20px;
-`;
+`
 const Text = styled.p`
   margin-top: 20px;
-`;
+`
 
 const Wrapper = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const SingleProduct = () => {
-  const { user } = useContext(Context);
-  const [product, setProduct] = useState({});
-  const [loading, setLoading] = useState(false);
-  const { id } = useParams();
+  const { user } = useContext(Context)
+  const [product, setProduct] = useState({})
+  const [loading, setLoading] = useState(false)
+  const { id } = useParams()
 
-  const { cartItems } = useContext(Context);
+  const { cartItems } = useContext(Context)
 
   const getProduct = () => {
-    setLoading(true);
+    setLoading(true)
     const targetProduct = data.products.find(
       (product) => product.id === parseInt(id)
-    );
-    setProduct(targetProduct);
-    setLoading(false);
-  };
+    )
+    setProduct(targetProduct)
+    setLoading(false)
+  }
 
   useEffect(() => {
-    getProduct();
-  }, []);
+    getProduct()
+  }, [])
 
   if (!product) {
-    return <Redirect to="/error" />;
+    return <Redirect to="/error" />
   }
 
   const addToCart = () => {
-    product.list = "cart";
-    add(cartItems, product, user);
-  };
+    product.list = 'cart'
+    add(cartItems, product, user)
+  }
 
   if (loading) {
-    return <Loading />;
+    return <Loading />
   }
 
   //  TODO: add a section for size
-  const { title, image, size, price } = product;
+  const { title, image, size, price } = product
 
   return (
     <>
@@ -93,13 +93,12 @@ const SingleProduct = () => {
           </Subtitle>
           <Subtitle>
             <Span>Cena: </Span>
-            {`${price} euros`}
+            {price}
           </Subtitle>
           {/* TODO: update description */}
           <Text>
-            Auduma soma ar rokām darinātu rakstu.
-            Materiāls: kokvilns.
-            Krāsa: balts.
+            Auduma soma ar rokām darinātu rakstu. Materiāls: kokvilns. Krāsa:
+            balts.
           </Text>
           <Wrapper>
             <PrimaryButton text="Pievienot grozam" clickEvent={addToCart} />
@@ -108,7 +107,7 @@ const SingleProduct = () => {
       </Content>
       <ToastContainer />
     </>
-  );
-};
+  )
+}
 
-export default SingleProduct;
+export default SingleProduct
