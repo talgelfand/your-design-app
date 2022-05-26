@@ -104,7 +104,7 @@ const Cart = () => {
   }
 
   if (products.length === 0) {
-    return <Title text="No products added to cart" />;
+    return <Title text="Nekadi produkti vēl nebija pievienotie grozam." />;
   }
 
   const handleSubmit = () => {

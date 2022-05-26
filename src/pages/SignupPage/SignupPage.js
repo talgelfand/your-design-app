@@ -28,10 +28,10 @@ const SignupPage = () => {
   return (
     <Section>
       <GlobalStyle />
-      <Title text="Sign up" />
+      <Title text="Izveidot kontu" />
       <Signup />
       <Subtitle>
-        <PrimaryLink path="login" text="Log in" bold />
+        <PrimaryLink path="login" text="Ieiet sava kontā" bold />
       </Subtitle>
     </Section>
   );

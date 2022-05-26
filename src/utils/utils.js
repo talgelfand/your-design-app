@@ -19,10 +19,10 @@ const add = (list, product, user) => {
         cartItems: firebase.firestore.FieldValue.arrayUnion(product),
       });
     } else {
-      toast.error("This product is already added");
+      toast.error("Šis produkts jau ir pievienots grozam");
     }
   } else {
-    toast.error("Please log in to add a product");
+    toast.error("Lūdzu ielagojieties sava kontā, lai pievienotu produktu grozam");
   }
 };
 

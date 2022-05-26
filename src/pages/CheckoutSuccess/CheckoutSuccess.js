@@ -20,8 +20,8 @@ const StyledLink = styled(Link)`
 const CheckoutSuccess = () => {
   return (
     <>
-      <Title text="Thank you for the purchase!" />
-      <StyledLink to="/">Go back home</StyledLink>
+      <Title text="Palsies par Jūsu pirkumu." />
+      <StyledLink to="/">Atgriezties mājas lapā</StyledLink>
     </>
   );
 };

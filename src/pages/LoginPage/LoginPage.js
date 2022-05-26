@@ -28,11 +28,11 @@ const LoginPage = () => {
   return (
     <Section>
       <GlobalStyle />
-      <Title text="Log in" />
+      <Title text="Ieiet sava kontā" />
       <Login />
       <Subtitle>
         Don't have an account?
-        <PrimaryLink path="signup" text="Sign up" margintop bold />
+        <PrimaryLink path="signup" text="Izveidot kontu" margintop bold />
       </Subtitle>
     </Section>
   );

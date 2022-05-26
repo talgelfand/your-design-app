@@ -58,7 +58,7 @@ const Catalogue = () => {
         />
       </Form>
       {searchedProducts.length === 0 ? (
-        <Title text="No products were found" />
+        <Title text="Pēc Jūsu pieprasījuma nekadi produkti nebija atrasti." />
       ) : (
         searchedProducts
       )}

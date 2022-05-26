@@ -23,8 +23,8 @@ const StyledLink = styled(Link)`
 const ErrorPage = () => {
   return (
     <Section>
-      <h1>Oops... This is the wrong address</h1>
-      <StyledLink to="/">Go back home</StyledLink>
+      <h1>Notika kļūda. Parbaudiet adresa pareizību.</h1>
+      <StyledLink to="/">Atgriezties mājas lapā</StyledLink>
     </Section>
   );
 };

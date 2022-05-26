@@ -28,10 +28,10 @@ const PasswordResetPage = () => {
   return (
     <Section>
       <GlobalStyle />
-      <Title text="Reset password" />
+      <Title text="Atjaunot paroli" />
       <PasswordReset />
       <Subtitle>
-        <PrimaryLink path="/login" text="Log in" bold />
+        <PrimaryLink path="/login" text="Ieiet sava kontā" bold />
       </Subtitle>
     </Section>
   );

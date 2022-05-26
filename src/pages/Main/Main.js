@@ -16,7 +16,7 @@ const Main = () => {
   return (
     <>
       <Navbar />
-      <Title>Our best products</Title>
+      <Title>Mūsu pieejami produkti</Title>
       <ProductsGrid />
     </>
   );

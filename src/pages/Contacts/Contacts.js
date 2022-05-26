@@ -4,7 +4,7 @@ import Title from "../../components/Title";
 const Contacts = () => {
   return (
     <>
-      <Title text="Contact us" />
+      <Title text="Kontakti" />
       <Contact />
     </>
   );

@@ -11,19 +11,10 @@ const About = () => {
     <>
       <Title text="About our brand" />
       <Description>
-        <strong>The brand was found on 22nd of May, 2021.</strong>
-        <br /> <br /> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Nesciunt nobis voluptatum mollitia dolore perferendis, adipisci neque
-        sit reprehenderit cumque voluptates provident aliquam amet officia
-        error! Atque repellat quis ducimus itaque quibusdam ipsum adipisci nihil
-        recusandae quaerat! Est sit incidunt itaque illum quia eaque iusto
-        magnam provident cum doloremque officia reprehenderit, delectus fugit
-        beatae dolores consequatur nulla, aspernatur explicabo vitae laborum
-        dignissimos nostrum deleniti ad. Maxime harum voluptatibus est
-        aspernatur dicta ratione eius quibusdam rem deleniti doloremque modi
-        minima natus officiis quod totam laboriosam, commodi possimus porro?
-        Ratione cumque soluta architecto minus sint, consectetur adipisci at
-        quaerat voluptates nostrum aut perspiciatis.
+        <strong>«YOURDESIGN»: PAR MŪSU VEIKALU</strong>
+        <br /> <br /> Mūsu veikala vēsture sākās vienkārši ar hobiju un ideju krāsot uz somām.Vienmēr vēlējos ienest kaut ko interesantu veikalos nopērkamo produktu ikdienas dizainā.
+        Pamanot, ka šī ideja ir pieprasīta, nolēmu atvērt biznesu un dot iespēju iegādāties sev ko neparastu. Iepriecini sevi un savu ģimeni.
+        Produkti vienmēr ir augstas kvalitātes, mīksti un patīkami pieskarties. Es vienmēr uzklausu jūs un jūsu viedokli, uzlabojot produktu.
       </Description>
     </>
   )
