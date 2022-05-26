@@ -11,19 +11,13 @@ const About = () => {
     <>
       <Title text="About our brand" />
       <Description>
-        <strong>The brand was found on 22nd of May, 2021.</strong>
-        <br /> <br /> Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Nesciunt nobis voluptatum mollitia dolore perferendis, adipisci neque
-        sit reprehenderit cumque voluptates provident aliquam amet officia
-        error! Atque repellat quis ducimus itaque quibusdam ipsum adipisci nihil
-        recusandae quaerat! Est sit incidunt itaque illum quia eaque iusto
-        magnam provident cum doloremque officia reprehenderit, delectus fugit
-        beatae dolores consequatur nulla, aspernatur explicabo vitae laborum
-        dignissimos nostrum deleniti ad. Maxime harum voluptatibus est
-        aspernatur dicta ratione eius quibusdam rem deleniti doloremque modi
-        minima natus officiis quod totam laboriosam, commodi possimus porro?
-        Ratione cumque soluta architecto minus sint, consectetur adipisci at
-        quaerat voluptates nostrum aut perspiciatis.
+        <strong>The brand was found on 24th of February, 2022.</strong>
+        <br /> <br /> The brand was developed by third-year students of the DITF department - 
+        Milana Venediktova, Taļa Geļfande, Evita Bebre and Eduards Cveks. The brand is based 
+        on an online store of hand embroidery and drawings on clothes or bags. The online 
+        store designer allows the buyer to choose both an element of clothing or an accessory, 
+        as well as the type and idea of decor. You can choose both the finished product 
+        and the design of the product.
       </Description>
     </>
   )

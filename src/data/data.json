@@ -2,99 +2,100 @@
   "products": [
     {
       "id": 1,
-      "image": "https://cdn.britannica.com/54/2754-004-557E360D/Poppies-oil-canvas-Claude-Monet-Musee-dOrsay-1873.jpg",
-      "title": "Impressionism",
-      "price": "16 euros",
-      "priceNum": 16,
-      "size": "4 hours"
+      "image": "https://gardentherapy.ca/wp-content/uploads/2019/01/Hand-Painted-Purple-Sunflower-Canvas-reusuable-tote-bag.jpg",
+      "title": "Auduma soma ar rakstu",
+      "price": "35 eiro",
+      "priceNum": 35,
+      "size": "35x45"
     },
     {
       "id": 2,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/41t91XjFeYL._AC_.jpg",
-      "title": "Andy Warhol's art",
-      "price": "12 euros",
-      "priceNum": 12,
-      "size": "3.5 hours"
+      "image": "https://cdn.dribbble.com/users/2792021/screenshots/10157814/_dsc1594.jpg",
+      "title": "T-krekls ar rakstu",
+      "price": "20 eiro",
+      "priceNum": 20,
+      "size": "M"
+
     },
     {
       "id": 3,
-      "image": "https://doagahehoc242.cloudfront.net/uploads/posts/726/e2860d1c_3-sett-image-9.png",
-      "title": "Introduction to modern art",
-      "price": "12 euros",
-      "priceNum": 12,
-      "size": "3 hours"
+      "image": "https://i.etsystatic.com/21307931/r/il/a60067/3393161656/il_794xN.3393161656_so0a.jpg",
+      "title": "T-krekls ar rakstu",
+      "price": "25 eiro",
+      "priceNum": 25,
+      "size": "S"
     },
     {
       "id": 4,
-      "image": "https://media.architecturaldigest.com/photos/605a2c39261ed921906092cf/3:2/w_2530,h_1686,c_limit/basquiat.jpeg",
-      "title": "Jean-Michel Basquiat",
-      "price": "12 euros",
-      "priceNum": 12,
-      "size": "3.5 hours"
+      "image": "https://i.etsystatic.com/21194187/r/il/2c7726/2480643158/il_794xN.2480643158_mpyw.jpg",
+      "title": "T-krekls ar rakstu",
+      "price": "20 eiro",
+      "priceNum": 20,
+      "size": "L"
     },
     {
       "id": 5,
-      "image": "https://64.media.tumblr.com/36325075a34fcef61414448ab2f6b9ce/tumblr_nmzunqQLpy1rui49ao1_r1_1280.jpg",
-      "title": "Introduction to ancient art",
-      "price": "20 euros",
-      "priceNum": 20,
-      "size": "5.5 hours"
+      "image": "https://i.etsystatic.com/15277659/r/il/a29939/3914947553/il_794xN.3914947553_gf16.jpg",
+      "title": "T-krekls ar rakstu",
+      "price": "25 eiro",
+      "priceNum": 25,
+      "size": "XS"
     },
     {
       "id": 6,
-      "image": "https://en.opisanie-kartin.com/images/2/image2119.jpg",
-      "title": "Marc Chagall",
-      "price": "12 euros",
-      "priceNum": 12,
-      "size": "3.5 hours"
+      "image": "https://gardentherapy.ca/wp-content/uploads/2019/01/Hand-Painted-Market-Tote-Bag.jpg",
+      "title": "Auduma soma ar rakstu",
+      "price": "30 eiro",
+      "priceNum": 30,
+      "size": "40x30"
     },
     {
       "id": 7,
-      "image": "https://goodparentingbrighterchildren.com/wp-content/uploads/2019/03/Children-drawing-PB.jpg",
-      "title": "How to teach children about art",
-      "price": "16 euros",
-      "priceNum": 16,
-      "size": "4.5 hours"
+      "image": "https://i.etsystatic.com/16937808/r/il/7f1847/2417637204/il_794xN.2417637204_87j6.jpg",
+      "title": "T-krekls ar rakstu",
+      "price": "15 eiro",
+      "priceNum": 15,
+      "size": "S"
     },
     {
       "id": 8,
-      "image": "https://images.firstpost.com/wp-content/uploads/2017/07/18700233_659922264200241_5489745228136063783_n-Copy.jpg",
-      "title": "The life and art of Frida Kahlo",
-      "price": "12 euros",
-      "priceNum": 12,
-      "size": "3.5 hours"
+      "image": "https://i.pinimg.com/originals/39/ce/b8/39ceb8e818bb420ee83f9ffc55419f9a.jpg",
+      "title": "Auduma soma ar izšuvumiem",
+      "price": "23 eiro",
+      "priceNum": 23,
+      "size": "40x35"
     },
     {
       "id": 9,
-      "image": "https://i.pinimg.com/originals/54/85/5d/54855d389ce55b59479877c5b5046499.jpg",
-      "title": "History of street art",
-      "price": "15 euros",
-      "priceNum": 15,
-      "size": "4.5 hours"
+      "image": "https://i.pinimg.com/originals/47/12/93/471293fbe408ce82d4e2d2c72a72f4a0.jpg",
+      "title": "Auduma soma ar izšuvumiem",
+      "price": "17 eiro",
+      "priceNum": 17,
+      "size": "30x35"
     },
     {
       "id": 10,
-      "image": "https://www.all-about-photo.com/images/articles/ART-524-1.jpg",
-      "title": "Art and its impact on society",
-      "price": "15 euros",
+      "image": "https://i.etsystatic.com/24598469/r/il/590053/2790749652/il_794xN.2790749652_f6yr.jpg",
+      "title": "T-krekls ar rakstu",
+      "price": "15 eiro",
       "priceNum": 15,
-      "size": "4.5 hours"
+      "size": "L"
     },
     {
       "id": 11,
-      "image": "https://i.pinimg.com/originals/bd/bf/08/bdbf08bedaff6c6332e57d848e1467e2.jpg",
-      "title": "The meaning of color in Mark Rothko's art",
-      "price": "12 euros",
-      "priceNum": 12,
-      "size": "3.5 hours"
+      "image": "https://i.etsystatic.com/15839788/r/il/93abbd/2378134629/il_794xN.2378134629_ks16.jpg",
+      "title": "T-krekls ar rakstu",
+      "price": "22 eiro",
+      "priceNum": 22,
+      "size": "M"
     },
     {
       "id": 12,
-      "image": "data:image/jpeg;base64,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",
-      "title": "Art and mental health",
-      "price": "18 euros",
-      "priceNum": 18,
-      "size": "5 hours"
+      "image": "https://www.faspaints.com/uploads/4/7/2/6/47269167/bags6_2_orig.jpg",
+      "title": "Soma ar rakstu",
+      "price": "13 eiro",
+      "priceNum": 13,
+      "size": "30x40"
     }
   ]
 }

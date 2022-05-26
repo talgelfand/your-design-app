@@ -93,7 +93,7 @@ const SingleProduct = () => {
           </Subtitle>
           <Subtitle>
             <Span>Price: </Span>
-            {`${price} euros`}
+            {`${price}`}
           </Subtitle>
           {/* TODO: update description */}
           <Text>
