@@ -6,14 +6,15 @@ import styled from 'styled-components'
 import { Context } from '../../context/context'
 import PrimaryButton from '../buttons/PrimaryButton'
 import DropdownList from '../DropdownList'
+import { FaShoppingCart } from 'react-icons/fa'
 
 const Section = styled.section`
-  position: fixed;
+  position: absolute;
   top: 0;
-  padding: 0 60px 0 60px;
+  padding: 0 60px;
   width: 100%;
   min-height: 100px;
-  background-color: var(--accent-color);
+  background-image: linear-gradient(44.8deg, rgba(255, 221, 136, 0.28) -53%, rgba(255, 136, 102, 0.37) 90%);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -28,11 +29,13 @@ const Menu = styled.div`
 `
 
 const CartLink = styled(Link)`
-  width: 10%;
-`
+  svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--dark-color);
+  }
 
-const CartIcon = styled.img`
-  width: 70%;
+  margin-right: 100px;
 `
 
 const LogoLink = styled(Link)`
@@ -56,7 +59,7 @@ const Header = () => {
       </LogoLink>
       <Menu>
         <CartLink to='/cart'>
-          <CartIcon src={cart} alt='cart' />
+          <FaShoppingCart />
         </CartLink>
         {currentUser ? <DropdownList /> : <PrimaryButton text='Sign in' clickEvent={() => history.push('/login')} darkbg />}
       </Menu>
