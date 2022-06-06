@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import cart from './cart.png'
 import logo from './logo_transparent.png'
 import { Link, useHistory } from 'react-router-dom'
 import styled from 'styled-components'
