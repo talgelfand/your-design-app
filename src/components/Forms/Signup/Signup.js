@@ -31,7 +31,7 @@ const Signup = () => {
     e.preventDefault()
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError('Paroles nesakrit')
+      return setError('Paroles nesakrīt')
     }
 
     try {
@@ -41,7 +41,7 @@ const Signup = () => {
       history.push('/')
       toast.success('Konts ir izveidots')
     } catch {
-      setError('Kļūda veidojot jaunu kontu')
+      setError('Neizdevās izveidot kontu')
     }
     setLoading(false)
   }
@@ -52,18 +52,18 @@ const Signup = () => {
         <Form onSubmit={handleSubmit}>
           {error && <Alert color='danger'>{error}</Alert>}
           <FormGroup>
-            <StyledLabel for='email'>Email:</StyledLabel>
+            <StyledLabel for='email'>E-pasts:</StyledLabel>
             <StyledInput innerRef={emailRef} type='email' id='email' required />
           </FormGroup>
           <FormGroup>
-            <StyledLabel for='password'>Password:</StyledLabel>
+            <StyledLabel for='password'>Parole:</StyledLabel>
             <StyledInput innerRef={passwordRef} type='password' id='password' required />
           </FormGroup>
           <FormGroup>
-            <StyledLabel for='password-confirm'>Password confirmation:</StyledLabel>
+            <StyledLabel for='password-confirm'>Paroles apstiprināšana:</StyledLabel>
             <StyledInput innerRef={passwordConfirmRef} type='password' id='password-confirm' required />
           </FormGroup>
-          <PrimaryButton text='Sign up' disabled={loading} type='submit' centered margintop />
+          <PrimaryButton text='Izveidot kontu' disabled={loading} type='submit' centered margintop />
         </Form>
       </CardBody>
       <ToastContainer />

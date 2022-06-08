@@ -26,7 +26,7 @@ const DropdownList = () => {
       await logout()
       history.push('/login')
     } catch {
-      setError('Failed to log out')
+      setError('Neizdevās iziet no konta')
     }
   }
 
@@ -34,7 +34,7 @@ const DropdownList = () => {
     <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
       <StyledDropdown caret>{currentUser.email}</StyledDropdown>
       <DropdownMenu>
-        <DropdownItem onClick={handleLogout}>Log out</DropdownItem>
+        <DropdownItem onClick={handleLogout}>Izlogoties no konta</DropdownItem>
         {error && <DropdownItem disabled>{error}</DropdownItem>}
       </DropdownMenu>
     </Dropdown>

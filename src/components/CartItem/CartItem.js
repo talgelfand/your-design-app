@@ -31,9 +31,9 @@ const CartItem = ({ id, title, image, size, price, removeItem }) => {
       <CardBody>
         <Title>{title}</Title>
         <CardSubtitle>{size}</CardSubtitle>
-        <CardText>{`${price} euros`}</CardText>
-        <PrimaryLink path={`/product/${id}`} text='View more' />
-        <SecondaryButton text='Remove' margintop clickEvent={() => handleRemoving(id)} />
+        <CardText>{`${price} `}</CardText>
+        <PrimaryLink path={`/product/${id}`} text='Informācija par produktu' />
+        <SecondaryButton text='Izdzēst' margintop clickEvent={() => handleRemoving(id)} />
       </CardBody>
       <Image src={image} alt={title} />
     </StyledCard>

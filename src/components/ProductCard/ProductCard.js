@@ -85,20 +85,20 @@ const ProductCard = ({ id, image, title, price, size, addToCart }) => {
   return (
     <Section onMouseLeave={handleHoverLeave}>
       <Subtitle>
-        <Span>Title:</Span> {title}
+        <Span>Produkta nosaukums:</Span> {title}
       </Subtitle>
       <Subtitle>
-        <Span>Size:</Span> {size}
+        <Span>Izmērs:</Span> {size}
       </Subtitle>
       <Subtitle>
-        <Span>Price:</Span> {price}
+        <Span>Cena:</Span> {price}
       </Subtitle>
       <Wrapper>
         <Icon>
           <FaCartPlus onClick={handleAddingToCart} />
         </Icon>
       </Wrapper>
-      <CardLink path={`product/${id}`} text='View more' bold />
+      <CardLink path={`product/${id}`} text='Informācija par produktu' bold />
     </Section>
   )
 }

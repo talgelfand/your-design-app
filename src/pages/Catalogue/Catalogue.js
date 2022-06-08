@@ -50,7 +50,7 @@ const Catalogue = () => {
           type='search'
           name='search-input'
           id='search-input'
-          placeholder='Search'
+          placeholder='Meklēt'
           value={initialSearch}
           onChange={(e) => setInitialSearch(e.target.value)}
         />
