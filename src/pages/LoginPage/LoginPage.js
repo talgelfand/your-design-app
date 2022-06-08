@@ -31,7 +31,7 @@ const LoginPage = () => {
       <Title text='Ieiet sava kontā' />
       <Login />
       <Subtitle>
-        Don't have an account?
+        Vēl nav konta?
         <PrimaryLink path='signup' text='Izveidot kontu' margintop bold />
       </Subtitle>
     </Section>

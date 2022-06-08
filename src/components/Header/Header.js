@@ -60,7 +60,7 @@ const Header = () => {
         <CartLink to='/cart'>
           <FaShoppingCart />
         </CartLink>
-        {currentUser ? <DropdownList /> : <PrimaryButton text='Sign in' clickEvent={() => history.push('/login')} darkbg />}
+        {currentUser ? <DropdownList /> : <PrimaryButton text='Ieet kontā' clickEvent={() => history.push('/login')} darkbg />}
       </Menu>
     </Section>
   )

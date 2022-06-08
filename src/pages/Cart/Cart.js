@@ -117,12 +117,12 @@ const Cart = () => {
       <Section>
         {products}
         <StyledButton color='link' onClick={clearAllProducts}>
-          Clear all
+          Nodzēst visu
         </StyledButton>
         <Wrapper>
           <div>
             <TotalItems>{`${numberOfProducts} product(s)`}</TotalItems>
-            <TotalPrice>{`Kopā: ${countTotalPrice()} euros`}</TotalPrice>
+            <TotalPrice>{`Kopā: ${countTotalPrice()} euro`}</TotalPrice>
           </div>
           <PrimaryButton clickEvent={handleSubmit} text={<StyledLink to='/checkout'>Nopirkt</StyledLink>} />
         </Wrapper>

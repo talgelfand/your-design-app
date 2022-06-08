@@ -28,11 +28,11 @@ const Contact = () => {
         <CardBody>
           <ul>
             <li>
-              <Span>E-mail: </Span>
+              <Span>E-pasts: </Span>
               <StyledLink href='mailto: your-design@gmail.com'>your-design@gmail.com</StyledLink>
             </li>
             <li>
-              <Span>Phone: </Span> <StyledLink href='tel:+37122345678'>+371 22345678</StyledLink>
+              <Span>Telefona numurs: </Span> <StyledLink href='tel:+37122345678'>+371 22345678</StyledLink>
             </li>
             <li>
               <Span>Instagram: </Span> @your_design_brand
