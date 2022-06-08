@@ -13,7 +13,7 @@ const add = (list, product, user) => {
 
   if (auth.currentUser) {
     if (!contains) {
-      toast('Added to cart')
+      toast('Pievienots grozam')
       list.push(product)
       user.update({
         cartItems: firebase.firestore.FieldValue.arrayUnion(product),

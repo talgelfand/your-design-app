@@ -31,7 +31,7 @@ const Signup = () => {
     e.preventDefault()
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError('Passwords do not match')
+      return setError('Paroles nesakrit')
     }
 
     try {
@@ -39,9 +39,9 @@ const Signup = () => {
       setLoading(true)
       await signup(emailRef.current.value, passwordRef.current.value)
       history.push('/')
-      toast.success('Account created')
+      toast.success('Konts ir izveidots')
     } catch {
-      setError('Failed to create an account')
+      setError('Kļūda veidojot jaunu kontu')
     }
     setLoading(false)
   }
