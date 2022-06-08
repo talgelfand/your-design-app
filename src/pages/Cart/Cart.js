@@ -121,10 +121,10 @@ const Cart = () => {
         </StyledButton>
         <Wrapper>
           <div>
-            <TotalItems>{`${numberOfProducts} product(s)`}</TotalItems>
-            <TotalPrice>{`Kopā: ${countTotalPrice()} euro`}</TotalPrice>
+            <TotalItems>{`${numberOfProducts} produkti`}</TotalItems>
+            <TotalPrice>{`Kopā: ${countTotalPrice()} eiro`}</TotalPrice>
           </div>
-          <PrimaryButton clickEvent={handleSubmit} text={<StyledLink to='/checkout'>Nopirkt</StyledLink>} />
+          <PrimaryButton clickEvent={handleSubmit} text={<StyledLink to='/checkout'>Apmaksāt</StyledLink>} />
         </Wrapper>
       </Section>
     </>

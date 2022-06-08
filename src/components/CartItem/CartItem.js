@@ -17,6 +17,7 @@ const Title = styled(CardTitle)`
 `
 const Image = styled(CardImg)`
   width: 200px;
+  height: 204px;
   object-fit: cover;
   filter: grayscale(30%);
 `
