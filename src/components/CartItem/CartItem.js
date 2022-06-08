@@ -32,7 +32,7 @@ const CartItem = ({ id, title, image, size, price, removeItem }) => {
         <Title>{title}</Title>
         <CardSubtitle>{size}</CardSubtitle>
         <CardText>{`${price} `}</CardText>
-        <PrimaryLink path={`/product/${id}`} text='Informācija par produktu' />
+        <PrimaryLink path={`/product/${id}`} text='Produkta apraksts' />
         <SecondaryButton text='Izdzēst' margintop clickEvent={() => handleRemoving(id)} />
       </CardBody>
       <Image src={image} alt={title} />

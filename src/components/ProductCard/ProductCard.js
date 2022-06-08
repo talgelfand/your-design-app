@@ -98,7 +98,7 @@ const ProductCard = ({ id, image, title, price, size, addToCart }) => {
           <FaCartPlus onClick={handleAddingToCart} />
         </Icon>
       </Wrapper>
-      <CardLink path={`product/${id}`} text='Informācija par produktu' bold />
+      <CardLink path={`product/${id}`} text='Produkta apraksts' bold />
     </Section>
   )
 }
