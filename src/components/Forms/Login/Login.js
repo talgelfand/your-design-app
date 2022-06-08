@@ -35,7 +35,7 @@ const Login = () => {
       await login(emailRef.current.value, passwordRef.current.value)
       history.push('/')
     } catch {
-      setError('Failed to sign in')
+      setError('Lietotājs nav atrasts')
     }
     setLoading(false)
   }
@@ -46,15 +46,15 @@ const Login = () => {
         <Form onSubmit={handleSubmit}>
           {error && <Alert color='danger'>{error}</Alert>}
           <FormGroup>
-            <StyledLabel for='email'>Email:</StyledLabel>
+            <StyledLabel for='email'>E-pasts:</StyledLabel>
             <StyledInput innerRef={emailRef} type='email' id='email' />
           </FormGroup>
           <FormGroup>
-            <StyledLabel for='password'>Password:</StyledLabel>
+            <StyledLabel for='password'>Parole:</StyledLabel>
             <StyledInput innerRef={passwordRef} type='password' id='password' />
           </FormGroup>
-          <PrimaryLink path='/reset-password' text='Forgot password?' margintop />
-          <PrimaryButton centered margintop text='Log in' disabled={loading} type='submit' />
+          <PrimaryLink path='/reset-password' text='Aizmirsi paroli?' margintop />
+          <PrimaryButton centered margintop text='Ieet kontā' disabled={loading} type='submit' />
         </Form>
       </CardBody>
     </StyledCard>

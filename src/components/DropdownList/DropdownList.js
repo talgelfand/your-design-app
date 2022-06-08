@@ -26,7 +26,7 @@ const DropdownList = () => {
       await logout()
       history.push('/login')
     } catch {
-      setError('Failed to log out')
+      setError('Neizdevās iziet no konta')
     }
   }
 

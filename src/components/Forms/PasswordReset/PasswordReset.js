@@ -31,9 +31,9 @@ const PasswordReset = () => {
       setError('')
       setLoading(true)
       await resetPassword(emailRef.current.value)
-      setMessage('Check your inbox for further instructions')
+      setMessage('Vēstule bija nosūtīta uz e-pastu, pārbaudiet tālāko informāciju vēstulē')
     } catch {
-      setError('Failed to reset password')
+      setError('Neizdevās atjaunot paroli')
     }
     setLoading(false)
   }
@@ -45,10 +45,10 @@ const PasswordReset = () => {
         {message && <Alert color='success'>{message}</Alert>}
         <Form onSubmit={handleSubmit}>
           <FormGroup>
-            <StyledLabel for='email'>Email:</StyledLabel>
+            <StyledLabel for='email'>E-pasts:</StyledLabel>
             <StyledInput innerRef={emailRef} type='email' id='email' />
           </FormGroup>
-          <PrimaryButton text='Reset' disabled={loading} type='submit' centered margintop />
+          <PrimaryButton text='Atjaunot' disabled={loading} type='submit' centered margintop />
         </Form>
       </CardBody>
     </StyledCard>

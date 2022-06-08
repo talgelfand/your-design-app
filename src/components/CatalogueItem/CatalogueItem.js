@@ -28,8 +28,8 @@ const CatalogueItem = ({ id, title, image, size, price }) => {
       <CardBody>
         <Title>{title}</Title>
         <CardSubtitle>{size}</CardSubtitle>
-        <CardText>{price + ' euros'}</CardText>
-        <PrimaryLink path={`/product/${id}`} text='View more' margintop />
+        <CardText>{price}</CardText>
+        <PrimaryLink path={`/product/${id}`} text='Informācija par produktu' margintop />
       </CardBody>
       <Image src={image} alt={title} />
     </StyledCard>

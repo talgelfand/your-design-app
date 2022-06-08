@@ -25,9 +25,9 @@ const StyledLink = styled(Link)`
 const Navbar = () => {
   return (
     <Section>
-      <StyledLink to='/about'>About us</StyledLink>
-      <StyledLink to='/catalogue'>Catalogue</StyledLink>
-      <StyledLink to='/contacts'>Contacts</StyledLink>
+      <StyledLink to='/about'>Par mums</StyledLink>
+      <StyledLink to='/catalogue'>Katalogs</StyledLink>
+      <StyledLink to='/contacts'>Kontakti</StyledLink>
     </Section>
   )
 }

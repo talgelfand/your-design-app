@@ -9,7 +9,7 @@ const Description = styled.p`
 const About = () => {
   return (
     <>
-      <Title text='About our brand' />
+      <Title text='Par mūsu veikalu' />
       <Description>
         <strong>«YOURDESIGN»: PAR MŪSU VEIKALU</strong>
         <br /> <br /> Mūsu veikala vēsture sākās vienkārši ar hobiju un ideju krāsot uz somām.Vienmēr vēlējos ienest kaut ko interesantu
